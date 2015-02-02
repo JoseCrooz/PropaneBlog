@@ -1,0 +1,12 @@
+{
+  "author": "yomamma",
+  "name": "hasaboilerplate",
+  "version": "0.0.0",
+  "dependencies": {
+  	"grunt": "latest",
+  	"grunt-connect": "latest",
+  	"grunt-yui-compressor": "latest",
+  	"grunt-compass": "latest"
+  	},
+  "devDependencies": {}
+}

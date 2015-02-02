@@ -1,0 +1,30 @@
+html.ie8 #hero, html.ie7 #hero {
+  min-height: 320px !important;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+html.ie8 .nav-main-wrap ul, html.ie7 .nav-main-wrap ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+html.ie8 .featured-content li, html.ie7 .featured-content li {
+  background-color: #724186 !important;
+}
+html.ie8 .nav-footer, html.ie7 .nav-footer {
+  padding-bottom: 25px;
+}
+html.ie8 footer .nav-footer li.section, html.ie7 footer .nav-footer li.section {
+  padding-right: 0;
+}
+
+html.ie7 .callout h3 {
+  line-height: 1.2em;
+}
+html.ie7 footer .nav-legal li {
+  float: left;
+}
+
+html.ie6 button {
+  display: none;
+}

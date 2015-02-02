@@ -1,0 +1,180 @@
+/* Shutter */
+
+/*div#shDisplay {
+	display: block;
+	padding:0;
+	margin-top:-3px;
+	background-color: transparent;
+	z-index: 10002;
+}*/
+
+/* HEADER */
+/*.shHeader {
+	display: block;
+	position:absolute;
+	margin:0 auto;
+	height:90px;
+	width:100%;
+	z-index: 10002;
+}
+
+.ps-logo{
+	float:left;
+}
+
+.shHeader p{
+	margin-top:30px;
+	padding-left:20px;
+	float:left;
+}
+
+.shNav{
+	width:230px;
+	height:90px;
+	padding-top:25px;
+	float:right;
+}
+
+.shNext{
+	float:left;
+	padding-top:5px;
+	padding-left:40px;
+}
+
+.shCount {
+	font-size:28px;
+	font-family:sans-serif;
+	color:#d3d3d3;
+	float:left;
+}
+
+.shCount span{
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.shPrev {
+	float:left;
+	padding-top:5px;
+	padding-right:40px;
+}
+
+.close-btn{
+	padding-top:30px;
+	padding-right:30px;
+	float:right;
+}
+
+.shWrap {
+	visibility: hidden;
+	background-color:#141414;
+	padding:0;
+	margin:0;
+	max-height:786px;
+}
+
+.hero-content{
+	float:right;
+	width:100%;
+	background-color:#141414;
+}*/
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+/*.shName {
+	font: normal 12px/17px 'Lucida Grande', Verdana, sans-serif;
+	color: #ffffff; 
+	width:305px;
+	width:25%;
+	float:right;
+	padding-left:20px;
+	padding-right:10px;
+	padding-top:20px;
+	margin-top:90px;
+	display:inline-block;
+}
+
+.shName h3{
+	font-size:18px;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+
+#shDisplay div#shTitle a {
+	text-decoration: none;
+	font: bold 16pt 'Courier New', Courier, fixed;
+	letter-spacing: -2px;
+	margin: 0 10px;
+	width: 26px;
+	color: #999999;
+}
+
+#shDisplay div#shTitle a:hover {
+	color: #ffffff;
+	border: none;
+}
+
+.hero-img{
+	float:right;
+	width:75%;
+	display:inline-block;
+	padding-top:90px;
+}
+
+.hero-img img{
+	float:right;
+	text-align:right;
+}
+
+body {
+	height: 100%;
+}
+
+.shShutter {
+	padding: 0;
+	margin: 0;
+}
+
+.shShutter, .shDisplay {
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: absolute;
+}
+
+.shShutter {
+	height:100%;
+	z-index: 10000;
+	background-color: #000000;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+.shDisplay.shTopImg {
+	background: transparent;
+	display: block;
+	max-width: none;
+	max-height: none;
+	float: none;
+	cursor: pointer;
+}*/
+
+div#shWaitBar {
+	font: bold 32px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	height: 36px;
+	width: 100%;
+	left: 0;
+	cursor: default;
+	opacity: 0.999;
+	filter: alpha(opacity=100);
+	z-index: 10001;
+	margin-top: 160px;
+	color: #ae0a0a;
+    text-align: center;
+}

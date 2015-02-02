@@ -1,0 +1,62 @@
+////////////////////////
+// IE Design Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file. This is for Internet Explorer's Use.
+//
+// All styling, non box model properties go here
+////////////////////////
+
+//IE8 & IE7 SHARED
+html.ie8, html.ie7{
+
+	#hero{
+		min-height: 320px !important;
+		margin-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	.nav-main-wrap{
+
+		ul{
+			float: right;
+			margin:0;
+			padding: 0;
+		}
+	}
+
+	.featured-content{
+		li{
+			background-color: $purple !important;
+		}
+	}
+
+	.nav-footer{
+		padding-bottom: 25px;
+	}
+
+	footer .nav-footer li.section{
+		padding-right:0;
+	}
+}
+
+//IE7
+html.ie7{
+
+	.callout h3{
+		line-height: 1.2em; // Prevents weird bug where letter 'g' was being cut off
+	}
+
+	footer .nav-legal li{
+		float: left;
+	}
+}
+
+//IE6
+html.ie6{
+
+	button{
+		display: none;
+	}
+}

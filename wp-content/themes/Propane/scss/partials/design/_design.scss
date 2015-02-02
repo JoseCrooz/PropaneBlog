@@ -1,0 +1,2768 @@
+////////////////////////
+// Design Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+// All styling, non box model properties go here
+////////////////////////
+
+
+//////////////////////////////////////////////////////////////////
+// RESETS
+//////////////////////////////////////////////////////////////////
+
+body { // Set base font attributes
+	font-size: 1em; 
+	line-height: 1.4;
+}
+ 
+h1, h2, h3, h4, h5, h6, ul, li, dl, ul, dt, dd, p, span, button{ //Reset
+	margin: 0; 
+	padding: 0;
+	font-weight: normal; // Fixes an issue where Firefox was displaying fonts in bold
+}
+
+li{
+	list-style: none;
+} 
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+	background: #b3d4fc; 
+	text-shadow: none;
+}
+
+::selection { 
+	background: #b3d4fc;
+	text-shadow: none;
+}
+
+img { //Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+  vertical-align: middle; 
+}
+
+fieldset { //Remove default fieldset styles.
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+textarea { //Allow only vertical resizing of textareas.
+  resize: vertical;
+}
+
+a, button{ // Turn off outlines on link clicks
+  outline: none !important;
+}
+
+//////////////////////////////////////////////////////////////////
+// SITE STYLES
+//////////////////////////////////////////////////////////////////
+
+body{
+  background:image-url("img/backgrounds/site-bg.jpg") repeat; 
+	background-color:$black;
+}
+
+html, body {
+	height: 100%;
+	margin: 0pt;
+}
+
+//////////////////////////////////////////////////////////////////
+// GLOBAL STYLES
+//////////////////////////////////////////////////////////////////
+
+.results-bar-btn{
+	display:block;
+	position:relative;
+	@include retina-sprite(searching-for-close);
+}
+
+
+//////////////////////////////////////////////////////////////////
+// ARTICLES
+//////////////////////////////////////////////////////////////////
+
+article{
+	padding:0;
+	@include breakpoint($breakpoint-lg){
+		//margin: 0 0 - 70px;
+	}
+	
+	.blog-image{
+		img{
+					margin:0;
+					float:right;
+					//width:87%;
+			}
+			
+			margin:0;
+	}
+	
+  .blog-cap{
+		.blog-date{
+			@include breakpoint($breakpoint-sm){
+				.month{
+					padding-top:5px;
+					padding-left:15px;
+					@include font-size(0.750);
+				}
+				.day{
+					padding-left:15px;
+				}
+				position:relative;
+				height:90px;
+				width:20%;
+				margin:0;
+				float:left;
+			}
+			@include breakpoint($breakpoint-md){
+				.month{
+					padding-top:15px;
+					padding-left:15px;
+					@include font-size(0.750);
+				}
+				.day{
+					padding-left:15px;
+				}
+				position:relative;
+				height:90px;
+				width:20%;
+				margin:0;
+				float:left;
+			}
+			@include breakpoint($breakpoint-lg){
+				.month{
+					padding-top:10px;
+					padding-left:10px;
+					@include font-size(0.875);
+				}
+				.day{
+					padding-left:10px;
+				}
+				position:relative;
+				height:130px;
+				width: 13%;
+				margin:0;
+				float:left;
+			}
+			padding:0;
+			margin:0;
+			background-color:$grey-dark;
+			color:$light-grey;
+			font-family:"din-medium";
+			float:left;
+			
+			p{
+				margin:0;
+				padding:0;
+				text-transform:uppercase;
+			}
+			
+			.day{
+				color:$orange;
+				@include font-size(2.500);
+				margin-top:-10px;
+				font-family:"din-med-alt";
+			}
+			
+			.month{
+				@include font-size(0.875);
+				color:$grey;
+			}
+		}
+	 
+		.blog-author{
+		  p{
+				margin:0;
+				padding:0;
+				text-transform:uppercase;
+		  }
+	    
+		  .blog-category a{
+				color:$orange;
+				text-decoration:none;
+				&:hover{
+					color:$propane-blue;
+				}
+			}
+	    
+			.author{
+				color:$grey;
+			}
+	    
+			background-color:$grey-darker;
+			margin:0;
+			padding-top:20px;
+			padding-left:20px;
+			@include font-size(1.125);
+			font-family:"din-cond-medium";
+			float:left;
+		}
+	 
+		.blog-title{
+			h1{
+				margin:0;
+				padding:0;
+				display:block;
+			}
+			a{
+				text-decoration: none;
+				color:$white;
+				display:block;
+				margin:0;
+				
+			}
+			
+			color:$white;
+			height:100%;
+			font-family:"stag-bold";
+			float:right;
+			letter-spacing:0.094em;
+		}
+		background-color:$grey-darker;
+	}
+	
+	.blog-content{
+		.tags{
+			ul{
+				li{
+					background-color:$grey-dark;
+					@include font-size(0.875);
+					color:$light-grey;
+					text-transform:uppercase;
+					margin-bottom:3px;
+					font-family:"din-cond-medium";
+					font-weight: bold;
+					float:right;
+					clear:both;
+					a{
+						display:block;
+						width:100%;
+						height:100%;
+						padding:5px 10px 5px 10px;
+						text-decoration:none;
+						color:#737373;
+						&:hover{
+							color:$white;
+						}
+					}
+					&:hover{
+						background-color:$propane-blue;	
+					}
+				}
+			}
+			
+			margin:0;
+			padding-top:40px;
+			padding-right:20px;
+			padding-left:5px;
+		}
+		
+		.blog-body{
+			.social-buttons{
+				padding-top:5px;    
+				background-color:$white;
+				float:left;
+				margin:0;
+				
+				li{
+					@include breakpoint($breakpoint-sm){
+						padding-left:2px;
+						padding-right:2px;
+					}
+					@include breakpoint($breakpoint-md){
+						padding-left:2px;
+						padding-right:2px;
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-left:4px;
+						padding-right:4px;
+					}
+					
+					a{margin-top:10px;}
+					
+					.to-twitter{
+						display:inline-block; 
+						position:relative;
+						@include retina-sprite(post-to-twitter);
+						&:hover{
+							@include retina-sprite(post-to-twitter-hover);
+						}
+					}
+					.to-facebook{
+						display:inline-block;
+						position:relative;
+						@include retina-sprite(post-to-facebook);
+						&:hover{
+							@include retina-sprite(post-to-facebook-hover); 
+						}
+					}
+					.to-share{
+						display:inline-block;
+						position:relative;
+						@include retina-sprite(post-to-share);
+						&:hover{
+							@include retina-sprite(post-to-share-hover); 
+						}
+					}
+					
+					display:inline-block; 
+					vertical-align:middle;
+				}
+					
+				.vert-rule{
+					display:inline-block;
+					position:relative;
+					@include retina-sprite(post-vertical-rule);
+					margin-left:5px;
+				} 
+			}
+			
+			.blog-body-copy{
+				padding-top:30px;
+				padding-bottom:30px;
+				color:$light-grey;
+				background-color:$white;
+				font-family:"din-regular";
+				margin:0;
+				h3{
+					padding-left:13px;
+					padding-bottom:20px;
+					padding-right:80px;
+				}
+			 
+				p{
+					padding-left:13px;
+					padding-bottom:20px;
+					display:block;
+					float:right;
+					width:100%;
+				}
+				
+				.continue{
+					//margin-right:80px;
+					display:block;
+					
+					a{
+						display:block;
+						@include font-size(0.875);
+						font-family:"stag-medium";
+						font-style:italic;
+						text-decoration:none;
+						color:$pink;
+						padding-bottom:2px;
+						border-bottom:1px solid $pink;
+						float:right;
+						&:hover{
+							border-bottom:1px solid $white;
+						}
+					}
+				}
+				
+			}
+			
+			background-color:$white;
+			border-bottom:4px solid $orange;
+		}
+	}
+	
+	.social-content{
+		.blog-date{
+			@include breakpoint($breakpoint-sm){
+				.month{
+					padding-top:5px;
+					padding-left:15px;
+					@include font-size(0.750);
+				}
+				.day{
+					padding-left:15px;
+				}
+				position:relative;
+				height:90px;
+				width:20%;
+				margin:0;
+				float:left;
+			}
+			@include breakpoint($breakpoint-md){
+				.month{
+					padding-top:15px;
+					padding-left:15px;
+					@include font-size(0.750);
+				}
+				.day{
+					padding-left:15px;
+				}
+				position:relative;
+				height:90px;
+				width:20%;
+				margin:0;
+				float:left;
+			}
+			@include breakpoint($breakpoint-lg){
+				.month{
+					padding-top:10px;
+					padding-left:10px;
+					@include font-size(0.875);
+				}
+				.day{
+					padding-left:10px;
+				}
+				position:relative;
+				height:130px;
+				width: 13%;
+				margin:0;
+				float:left;
+			}
+			padding:0;
+			margin:0;
+			background-color:$propane-blue;
+			color:$black;
+			font-family:"din-medium";
+			float:left;
+			
+			p{
+				margin:0;
+				padding:0;
+				text-transform:uppercase;
+			}
+			
+			.day{
+				@include font-size(2.500);
+				margin-top:-10px;
+				font-family:"din-med-alt";
+			}
+			
+			.month{
+				@include font-size(0.875);
+			}
+		}
+		
+		.social-preview{
+			.social-icon{
+				margin: 0;
+				float:left;
+				span{
+					display:block;
+					position:relative;
+					width:100%;
+					height:100%;
+					z-index:1003;
+					border:1px solid #000;
+					//@include retina-sprite(tweet-bird);
+				}
+			}
+			
+			.social-text{
+				span{
+					font-family:"stag-bold";
+				}
+				p{
+					@include font-size(2.750);
+					padding-top:40px;
+					font-family:"stag-light";
+					line-height:1em;
+				}
+				.author{
+					@include font-size(1.625);
+					padding-top:15px;
+					padding-bottom:60px;
+				}
+				color: $light-grey;
+				margin: 0;
+				float:right;
+			}
+			
+			background-color:$black;
+			margin: 0;
+			float:right;
+		}
+	}
+ 
+	.comments{
+		
+		h1{
+			font-weight:bold;
+			text-align: left;
+			padding-top:30px;
+			padding-bottom:5px;
+		}
+		
+		ul{
+			li{
+				.comment-copy p{
+					border-bottom:1px solid $light-grey;
+				}
+			}
+			li:last-of-type{
+				.comment-copy p{
+					border-bottom:0px solid $light-grey;	
+				}
+			}
+			.comment{
+				.comment-detail{
+					.comment-author{
+						color:$propane-blue;
+						text-transform:uppercase;
+					}
+					
+					margin:0;
+					padding-left:20px;
+				}
+				.comment-copy{
+					p{
+						padding-bottom:30px;
+					}
+				}
+				
+				width:100%;
+				padding-top:30px;
+				color:$light-grey;
+			}
+		}
+		
+		//padding-bottom:10px;
+	}
+  
+	&.article-1 .callout .media{ // Reset .article-1 .media for ADA consideration / div swap between .callout & .content
+			margin-top: 20px;
+			margin-bottom: 0;
+
+			@include breakpoint($breakpoint-lg){
+					margin-top: 5px;
+			}
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// FRONT PAGE
+//////////////////////////////////////////////////////////////////
+body.front-page{
+	.blog-article{
+		.blog-image img{
+			@include breakpoint($breakpoint-sm){
+				display:none;
+			}
+			@include breakpoint($breakpoint-md){
+				display:none;
+			}
+			@include breakpoint($breakpoint-lg){
+				display:block;
+				width:87%;
+			}
+		}
+		
+		.blog-cap{
+			@include breakpoint($breakpoint-sm){
+				border-top:1px solid $black;
+			}
+			
+			@include breakpoint($breakpoint-md){
+				border-top:1px solid $black;
+			}
+			@include breakpoint($breakpoint-lg){
+				border-top:0px solid $black;
+			}
+			padding:0;
+			margin:0;
+			
+			.blog-author{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+					float:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+					float:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display: inline-block;
+					margin:0;
+					float:left;
+					height:130px;
+					width:17%;
+				}
+			}
+			
+			.blog-title{
+				@include breakpoint($breakpoint-sm){
+					position:relative;
+					float:right;
+					height:90px;
+					width:80%;
+					@include font-size(0.688);
+					line-height: 2.188em;
+				}
+				@include breakpoint($breakpoint-md){
+					position:relative;
+					float:right;
+					height:90px;
+					width:80%;
+					@include font-size(0.938);
+					line-height: 2.188em;
+				}
+				@include breakpoint($breakpoint-lg){
+					position:relative;
+					height:130px;
+					width:70%;
+					margin:0;
+					float:right;
+				}
+				a{
+					@include breakpoint($breakpoint-sm){
+						height:90px;
+						padding-top:20px;
+						padding-left:10px;
+						background-color:$pink;
+					}
+					@include breakpoint($breakpoint-md){
+						height:90px;
+						padding-top:20px;
+						padding-left:20px;
+						background-color:$pink;
+						
+					}
+					@include breakpoint($breakpoint-lg){
+						height:130px;
+						padding-top:30px;
+						padding-right:10px;
+						background-color:$propane-blue;
+						&:hover{
+							color:$orange;
+							background-color:$pink;
+						}
+					}
+				}
+			}
+		}
+		
+		.blog-content{
+			@include breakpoint($breakpoint-sm){
+				display:none;
+			}
+			@include breakpoint($breakpoint-md){
+				display:none;
+			}
+			@include breakpoint($breakpoint-lg){
+				display:block;
+			}
+			
+			.tags{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline-block;
+					margin:0;
+					width:13%;
+				}
+			}
+			
+			.blog-body{
+				@include breakpoint($breakpoint-lg){
+					width:87%;
+					margin:0;
+					padding:0;
+				}
+				
+				.social-buttons{
+					@include breakpoint($breakpoint-sm){
+						display:none;
+					}
+					@include breakpoint($breakpoint-md){
+						display:none;
+					}
+					@include breakpoint($breakpoint-lg){
+						display:block;
+						float:left;
+						width: 20%;
+					}
+					margin:0;
+					padding:0;
+					ul{
+						text-align:center;
+						margin:47px auto;
+						padding:0;
+						//padding-right:8px;
+						//margin-left:10px;
+						width:100%;
+						li{
+							width:20%;
+							display:inline-block;
+						}
+						.share-link{
+							padding-left:8px;
+							padding-right:8px;
+							display:inline-block;
+						}
+						
+						.st_twitter_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							@include retina-sprite(post-to-twitter);
+							margin-left:-10px;
+							margin-top:-10px;
+						}
+						.st_twitter_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-twitter);
+							&:hover{
+								@include retina-sprite(post-to-twitter-hover);
+							}
+						}
+						
+						.st_facebook_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							margin-left:-5px;
+							margin-top:-5px;
+							@include retina-sprite(post-to-facebook);
+						}
+						.st_facebook_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							//margin-left:2px;
+							margin-top:-3px;
+							padding-right:5px;
+							@include retina-sprite(post-to-facebook);
+							&:hover{
+								@include retina-sprite(post-to-facebook-hover);
+							}
+						}
+						
+						.st_sharethis_large .stButton .stLarge{
+							display:none;
+							position:relative;
+							@include retina-sprite(post-to-share);
+						}
+						.st_sharethis_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-share);
+							&:hover{
+								@include retina-sprite(post-to-share-hover);
+							}
+						}
+						
+						.vert-rule{
+							display:inline-block;
+							position:relative;
+							top:-2px;
+							@include retina-sprite(post-vertical-rule);
+							margin-left:7px;
+						}
+					}
+				}
+				
+				.blog-body-copy{
+					@include breakpoint($breakpoint-sm){
+						padding-left:20px;
+						padding-right:20px;
+						background-color:$white;
+					}
+					@include breakpoint($breakpoint-md){
+						padding-left:20px;
+						padding-right:20px;
+						background-color:$white;
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-left:0;
+						padding-right:0;
+						width:80%;
+					}
+					margin:0;
+					padding-top:40px;
+					float:right;
+					
+					h3{
+						font-family:"stag-book";
+						@include font-size(1.250);
+						color:#7d7d7d;
+						margin:0;
+						@include breakpoint($breakpoint-sm){
+							padding-right:15px;
+							float:right;
+						}
+						@include breakpoint($breakpoint-md){
+							padding-right:15px;
+							float:right;
+						}
+						@include breakpoint($breakpoint-lg){
+							padding-right:80px;
+							float:left;
+						}
+					}
+					
+					h4{
+						@include breakpoint($breakpoint-sm){
+							display:block;
+							padding-bottom:15px;
+							padding-left:15px;
+						}
+						@include breakpoint($breakpoint-md){
+							display:block;
+							padding-bottom:15px;
+							padding-left:15px;
+						}
+						@include breakpoint($breakpoint-lg){
+							display:none;
+						}
+						
+						text-transform:uppercase;
+						@include font-size(1.125);
+						font-family:"din-cond-medium";
+					}
+					
+					p{
+						@include breakpoint($breakpoint-sm){
+							padding-right:15px;
+							float:left;
+						}
+						@include breakpoint($breakpoint-md){
+							padding-right:15px;
+							float:left;
+						}
+						@include breakpoint($breakpoint-lg){
+							padding-right:80px;
+							float:left;
+						}
+						position:relative;
+					}
+				}
+			}
+		}
+	}
+	
+	.social-content{		
+		.social-preview{
+			@include breakpoint($breakpoint-sm){
+				width:80%;
+				border-bottom:0px solid $fuchsia;
+			}
+			@include breakpoint($breakpoint-md){
+				width:80%;
+				border-bottom:0px solid $fuchsia;
+			}
+			@include breakpoint($breakpoint-lg){
+				width:87%;
+				border-bottom:4px solid $fuchsia;
+			}
+			
+			.social-icon{
+				@include breakpoint($breakpoint-sm){
+					width:25%;
+					padding-top:0;    
+					padding-left:30px;
+					padding-right:10px;
+				}
+				@include breakpoint($breakpoint-md){
+					width:18%;
+					padding-top:0;    
+					padding-left:30px;
+					padding-right:10px;
+				}
+				@include breakpoint($breakpoint-lg){
+					width:100%;
+					padding-top:0;    
+					padding-left:60px;
+				}
+				
+				.bird{
+					@include breakpoint($breakpoint-sm){
+						margin-left:-15px;
+					}
+					@include breakpoint($breakpoint-md){
+						margin-left:-15px;
+					}
+					@include breakpoint($breakpoint-lg){
+						margin-left:0;
+					}
+					margin-top:40px;
+					display:block;
+					position:absolute;
+					@include retina-sprite(tweet-bird);
+				}
+			}
+			
+			.social-text{
+				@include breakpoint($breakpoint-sm){
+					width:75%;
+				}
+				@include breakpoint($breakpoint-md){
+					width:82%;
+				}
+				@include breakpoint($breakpoint-lg){
+					width:80%;
+				}
+				
+				ul{
+					display:none;
+				}
+				
+				p{
+					@include breakpoint($breakpoint-sm){
+						padding-right:20px;
+						@include font-size(1.750);
+					}
+					@include breakpoint($breakpoint-md){
+						padding-right:20px;
+						@include font-size(2);
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-right:60px;
+						@include font-size(3);
+					}
+					white-space: pre;           /* CSS 2.0 */
+					white-space: pre-wrap;      /* CSS 2.1 */
+					white-space: pre-line;      /* CSS 3.0 */
+					white-space: -pre-wrap;     /* Opera 4-6 */
+					white-space: -o-pre-wrap;   /* Opera 7 */
+					white-space: -moz-pre-wrap; /* Mozilla */
+					white-space: -hp-pre-wrap;  /* HP Printers */
+					word-wrap: break-word;      /* IE 5+ */
+				}
+				.author{
+					@include breakpoint($breakpoint-lg){@include font-size(1.625);}
+				}
+				
+				a{
+					text-decoration:none;
+					color:$propane-blue;
+					&:hover{
+						text-decoration:underline;
+					}
+				}
+			}
+		}
+	}
+	
+	// pagination 
+	.page-nav{
+		background-color: $grey-darkest;
+		padding:0 0 0 0;
+		
+		.pagination{
+			.page-numbers{
+				@include breakpoint($breakpoint-sm){
+					float:none;
+					text-align:center;
+				}
+				@include breakpoint($breakpoint-md){
+					float:none;
+					text-align:center;
+				}
+				@include breakpoint($breakpoint-lg){
+					float:right;
+				}
+				
+				.current{
+					background-color:$propane-blue;
+					color:$white;
+					padding:10px 15px;
+					margin-left:-2px;
+				}
+				
+				a{
+					text-decoration:none;
+					padding:10px 15px;
+					margin-left:-2px;
+					background-color:$dark-grey;
+					color:$propane-blue;
+					&:hover{
+						color:$white;
+						background-color:$propane-blue;
+					}
+				}
+				margin-top:9px;
+			}
+			
+			background-color: $grey-darkest;
+			height:40px;
+			font-family:"din-medium";
+		}
+	}
+	
+	.empty{
+		.nothing-to-display{
+			font-family:"stag-bold";
+			@include font-size(0.813);
+			color:$dark-grey;
+			padding:20px;
+			background-color:$light-grey;
+			a{
+				color:$white;
+				text-decoration:none;
+				font-family:"stag-bold";
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// SINGLE PAGE
+//////////////////////////////////////////////////////////////////
+body.detail-page{
+	.blog-article{
+		.blog-image img{
+			@include breakpoint($breakpoint-sm){
+				width:100%;
+			}
+			@include breakpoint($breakpoint-md){
+				width:100%;
+			}
+			@include breakpoint($breakpoint-lg){
+				width:87%;
+			}
+		}
+		.blog-cap{			
+			.blog-author{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+					margin:0;
+					float:left;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+					margin:0;
+					float:left;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline;
+					height:130px;
+					width:17%;
+					margin:0;
+					float:left;
+				}
+			}
+			
+			.blog-title{
+				@include breakpoint($breakpoint-sm){
+					position:relative;
+					float:right;
+					height:90px;
+					width:80%;
+					@include font-size(0.688);
+					padding-top:20px;
+					padding-left:10px;
+					line-height: 2.188em;
+				}
+				@include breakpoint($breakpoint-md){
+					position:relative;
+					float:right;
+					height:90px;
+					width:80%;
+					@include font-size(0.938);
+					padding-top:20px;
+					padding-left:20px;
+					line-height: 2.188em;
+				}
+				@include breakpoint($breakpoint-lg){
+					position:relative;
+					height:130px;
+					width:70%;
+					margin:0;
+					float:right;
+					padding-top:30px;
+					padding-right:10px;
+				}
+				
+				background-color:$propane-blue;
+			}
+		}
+		
+		.blog-content{
+			@include breakpoint($breakpoint-lg){
+				display:block;
+			}
+			
+			.tags{
+				
+				@include breakpoint($breakpoint-sm){
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline-block;
+					margin:0;
+					width:13%;
+				}
+			}
+			
+			.blog-body{
+				@include breakpoint($breakpoint-sm){
+					padding-left:20px;
+					padding-right:20px;
+					background-color:$white;
+				}
+				@include breakpoint($breakpoint-md){
+					padding-left:20px;
+					padding-right:20px;
+					background-color:$white;
+				}
+				@include breakpoint($breakpoint-lg){
+					padding-left:0;
+					padding-right:0;
+					width:87%;
+				}
+				margin:0;
+				padding:0;
+				
+				.social-buttons{
+					@include breakpoint($breakpoint-sm){
+						display:none;
+					}
+					@include breakpoint($breakpoint-md){
+						display:none;
+					}
+					@include breakpoint($breakpoint-lg){
+						display:block;
+						float:left;
+						width: 20%;
+					}
+					margin:0;
+					padding:0;
+					
+					ul{
+						text-align:center;
+						margin:47px auto;
+						padding:0;
+						//padding-right:8px;
+						//margin-left:10px;
+						
+						width:100%;
+						li{
+							width:20%;
+							display:inline-block;
+						}
+						.share-link{
+							padding-left:8px;
+							padding-right:8px;
+							display:inline-block;
+						}
+						
+						.st_twitter_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							@include retina-sprite(post-to-twitter);
+							margin-left:-10px;
+							margin-top:-10px;
+						}
+						.st_twitter_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-twitter);
+							&:hover{
+								@include retina-sprite(post-to-twitter-hover);
+							}
+						}
+						
+						.st_facebook_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							margin-left:-5px;
+							margin-top:-5px;
+							@include retina-sprite(post-to-facebook);
+						}
+						.st_facebook_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							//margin-left:2px;
+							margin-top:-3px;
+							padding-right:5px;
+							@include retina-sprite(post-to-facebook);
+							&:hover{
+								@include retina-sprite(post-to-facebook-hover);
+							}
+						}
+						
+						.st_sharethis_large .stButton .stLarge{
+							display:none;
+							position:relative;
+							@include retina-sprite(post-to-share);
+						}
+						.st_sharethis_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-share);
+							&:hover{
+								@include retina-sprite(post-to-share-hover);
+							}
+						}
+						
+						.vert-rule{
+							display:inline-block;
+							position:relative;
+							top:-2px;
+							@include retina-sprite(post-vertical-rule);
+							margin-left:7px;
+						}
+					}
+				}
+				
+				.blog-body-copy{
+					@include breakpoint($breakpoint-sm){
+						//padding-top:20px;
+						width:100%;
+					}
+					@include breakpoint($breakpoint-md){
+						//padding-top:20px;
+						width:100%;
+					}
+					@include breakpoint($breakpoint-lg){
+						width:80%;
+					}
+					margin:0;
+					padding-top:40px;
+					
+					h3{
+						font-family:"stag-book";
+						@include font-size(1.250);
+						color:#7d7d7d;
+						margin:0;
+						@include breakpoint($breakpoint-sm){
+							padding-right:15px;
+							float:right;
+						}
+						@include breakpoint($breakpoint-md){
+							padding-right:15px;
+							float:right;
+						}
+						@include breakpoint($breakpoint-lg){
+							padding-right:80px;
+							float:left;
+						}
+					}
+					
+					h4{
+						@include breakpoint($breakpoint-sm){
+							display:block;
+							padding-bottom:15px;
+							padding-left:15px;
+						}
+						@include breakpoint($breakpoint-md){
+							display:block;
+							padding-bottom:15px;
+							padding-left:15px;
+						}
+						@include breakpoint($breakpoint-lg){
+							display:none;
+						}
+						
+						span a{
+							color:$orange;
+							text-decoration:none;
+							text-transform:uppercase;
+							padding-right:5px;
+						}
+						text-transform:uppercase;
+						@include font-size(1.125);
+						font-family:"din-cond-medium";
+					}
+					
+					p{
+						@include breakpoint($breakpoint-sm){
+							padding-right:15px;
+						}
+						@include breakpoint($breakpoint-md){
+							padding-right:15px;
+						}
+						@include breakpoint($breakpoint-lg){
+							padding-right:80px;
+						}
+						position:relative;
+					}
+					
+					p:first-of-type{
+						//font-weight:bold;
+					}
+					
+					ul{
+						@include breakpoint($breakpoint-sm){
+							width:100%;
+							text-align:center;
+							padding:0;
+							display:block;
+						}
+						@include breakpoint($breakpoint-md){
+							width:100%;
+							text-align:center;
+							padding:0;
+							display:block;
+						}
+						@include breakpoint($breakpoint-lg){
+							display:none;
+						}
+						
+						
+						.share-link{
+							@include breakpoint($breakpoint-sm){
+								padding-left:15px;
+								padding-right:15px;
+							}
+							@include breakpoint($breakpoint-md){
+								padding-left:15px;
+								padding-right:15px;
+							}
+							@include breakpoint($breakpoint-lg){
+								display:none;
+							}
+							display:inline-block;
+						}
+						span{
+							position:absolute;
+						}
+						
+						.st_twitter_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							@include retina-sprite(post-to-twitter);
+							margin-left:-10px;
+							margin-top:-10px;
+						}
+						.st_twitter_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-twitter);
+							&:hover{
+								@include retina-sprite(post-to-twitter-hover);
+							}
+						}
+						
+						.st_facebook_large .stButton .stLarge{
+							display:inline-block;
+							position:relative;
+							margin-left:-5px;
+							margin-top:-5px;
+							@include retina-sprite(post-to-facebook);
+						}
+						.st_facebook_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							margin-left:3px;
+							@include retina-sprite(post-to-facebook);
+							&:hover{
+								@include retina-sprite(post-to-facebook-hover);
+							}
+						}
+						
+						.st_sharethis_large .stButton .stLarge{
+							display:none;
+							position:relative;
+							@include retina-sprite(post-to-share);
+						}
+						.st_sharethis_large{
+							display:inline-block;
+							position:relative;
+							cursor:pointer;
+							@include retina-sprite(post-to-share);
+							&:hover{
+								@include retina-sprite(post-to-share-hover);
+							}
+						}
+						
+						.vert-rule{
+							display:inline-block;
+							position:relative;
+							top:8px;
+							@include retina-sprite(post-vertical-rule);
+							margin-left:5px;
+						}
+					}
+					
+					/*.share-this{
+						float:left;
+						//border:1px solid #000;
+					}*/
+					
+					.blog-body-tags{
+						@include breakpoint($breakpoint-sm){
+							display:inline-block;
+						}
+						@include breakpoint($breakpoint-md){
+							display:inline-block;
+						}
+						@include breakpoint($breakpoint-lg){
+							display:none;
+						}
+						li{
+							display:inline-block;
+							padding-left:8px;
+							padding-right:8px;
+							a{
+								color:$propane-blue;
+								font-family:"din-cond-medium";
+								@include font-size(1.000);
+								text-decoration:none;
+								text-transform:uppercase;
+							}
+						}
+						height:50px;
+						color:$propane-blue;
+						text-align: center;
+					}
+					
+					.blog-body-share{
+						@include breakpoint($breakpoint-sm){
+							display:block;
+						}
+						@include breakpoint($breakpoint-md){
+							display:block;
+						}
+						@include breakpoint($breakpoint-lg){
+							display:none;
+						}
+						
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	
+	.blog-comments{
+		.comments{
+			@include breakpoint($breakpoint-sm){
+				background-color:$black;
+				width:100%;
+			}
+			@include breakpoint($breakpoint-md){
+				background-color:$black;
+				width:100%;
+			}
+			@include breakpoint($breakpoint-lg){
+				background-color:$grey-comments;
+				width:87%;
+			}
+			
+			ul, li{
+				@include breakpoint($breakpoint-sm){
+					padding:0;
+					margin:0;
+				}
+				@include breakpoint($breakpoint-md){
+					padding:0;
+					margin:0;
+				}
+				@include breakpoint($breakpoint-lg){
+					padding:20px 0;
+					margin:0;
+				}
+			}
+			
+			h2{
+				@include breakpoint($breakpoint-sm){
+					color:$lighter-grey;
+					padding-left:20px;
+					margin-left:0;
+				}
+				@include breakpoint($breakpoint-md){
+					color:$lighter-grey;
+					padding-left:20px;
+					margin-left:0;
+				}
+				@include breakpoint($breakpoint-lg){
+					color:$light-grey;
+					padding-left:20%;
+					margin-left:15px;
+				}
+				@include font-size(2.125);
+				font-family:"stag-bold";
+				padding-top:20px;
+			}
+			
+			.comment-body{
+				.comment-detail{
+					@include breakpoint($breakpoint-sm){
+						float:none;
+						width:100%;
+					}
+					@include breakpoint($breakpoint-md){
+						float:none;
+						width:100%;
+					}
+					@include breakpoint($breakpoint-lg){
+						float:left;
+						width:20%;
+					}
+					.comment-author{
+						@include breakpoint($breakpoint-sm){
+							padding-right:15px;
+							float:left;
+						}
+						@include breakpoint($breakpoint-md){
+							padding-right:15px;
+							float:left;
+						}
+						@include breakpoint($breakpoint-lg){
+							padding-right:15px;
+							float:none;
+						}
+					}
+					@include font-size(1.125);
+					font-family:"din-cond-medium";
+				}
+				.comment-copy{
+					@include breakpoint($breakpoint-sm){
+						float:none;
+						//width:90%;
+						padding-top:10px;
+						padding-left:20px;
+						padding-right:20px;
+					}
+					@include breakpoint($breakpoint-md){
+						float:none;
+						//width:90%;
+						padding-top:10px;
+						padding-left:20px;
+						padding-right:20px;
+					}
+					@include breakpoint($breakpoint-lg){
+						float:right;
+						width:80%;
+						padding-right:60px;
+						margin-top:-13px;
+					}
+					p{
+						@include breakpoint($breakpoint-sm){
+							margin-left:0;
+						}
+						@include breakpoint($breakpoint-md){
+							margin-left:0;
+						}
+						@include breakpoint($breakpoint-lg){
+							margin-left:-5px;
+						}	
+					}
+					font-family:"din-regular";
+				}
+				
+				width:100%;
+				padding-bottom:30px;
+				color:$light-grey;
+			}
+		}
+		.comment-form{
+			@include breakpoint($breakpoint-sm){
+				background-color:$black;
+				width:100%;
+				padding-left:20px;
+			}
+			@include breakpoint($breakpoint-md){
+				background-color:$black;
+				width:100%;
+				padding-left:20px;
+			}
+			@include breakpoint($breakpoint-lg){
+				background-color:$grey-comments;
+				width:87%;
+				padding-left:30px; 
+			}
+			
+			#respond{
+				h3{
+					@include breakpoint($breakpoint-sm){
+						color:$lighter-grey;
+						padding-left:0;
+					}
+					@include breakpoint($breakpoint-md){
+						color:$lighter-grey;
+						padding-left:0;
+					}
+					@include breakpoint($breakpoint-lg){
+						color:$light-grey;
+						padding-left:19%;
+					}
+					padding-top:20px;
+					@include font-size(1.625);
+					font-family:"stag-bold";
+				}
+				
+				.logged-in-as{
+					a{
+						text-decoration:none;
+						color:$propane-blue;
+						&:hover{
+							text-decoration:underline;
+						}
+					}
+					@include font-size(1.125);
+					font-family:"din-cond-light";
+					color:$lighter-grey;
+				}
+				
+				#commentform{
+					@include breakpoint($breakpoint-sm){
+						width:100%;
+						padding-left:0;
+					}
+					@include breakpoint($breakpoint-md){
+						width:100%;
+						padding-left:0;
+					}
+					@include breakpoint($breakpoint-lg){
+						width:100%;
+						padding-left:19%;
+					}
+					.comment-notes{
+						.required{color:$orange;}
+					}
+					.comment-form-author{
+						input{margin-left:21px;}
+						.required{color:$orange;}
+					}
+					.comment-form-email{
+						input{margin-left:21px;}
+						.required{color:$orange;}
+					}
+					.comment-form-url{
+						input{margin-left:17px;}
+					}
+					p{
+						color:$light-grey;
+						label{
+							@include font-size(1.125);
+							font-family:"din-cond-medium";
+							text-transform:uppercase;
+						}
+						
+						padding-bottom:10px;
+					}
+					
+					input{
+						@include breakpoint($breakpoint-sm){
+							width:70%;
+						}
+						@include breakpoint($breakpoint-md){
+							width:80%;
+						}
+						@include breakpoint($breakpoint-lg){
+							width:80%;
+						}
+						margin-left:15px;
+						background-color:#696969;
+						color:$white;
+						border:0;
+					}
+					
+				}
+				
+				.comment-form-comment{
+					@include breakpoint($breakpoint-sm){
+						color:$lighter-grey;
+						//padding-left:20px;
+					}
+					@include breakpoint($breakpoint-md){
+						color:$lighter-grey;
+						//padding-left:20px;
+					}
+					@include breakpoint($breakpoint-lg){
+						color:$light-grey;
+						//padding-left:20%;
+					}
+					
+					label{
+						@include font-size(1.125);
+						font-family:"din-cond-light";
+						border:0;
+					}
+					
+					textarea{
+						@include breakpoint($breakpoint-sm){
+							margin-left:10px;
+							margin-top:8px;
+							width:70%;
+						}
+						@include breakpoint($breakpoint-md){
+							margin-left:10px;
+							margin-top:8px;
+							width:80%;
+						}
+						@include breakpoint($breakpoint-lg){
+							margin-left:10px;
+							margin-top:8px;
+							width:80%;
+						}
+						border:0;
+						background-color:#696969;
+						color:$white;
+					}
+				}
+				
+				.form-allowed-tags{
+					@include breakpoint($breakpoint-sm){
+						color:$lighter-grey;
+						margin-left:70px;
+						width:70%;
+					}
+					@include breakpoint($breakpoint-md){
+						color:$lighter-grey;
+						margin-left:70px;
+						width:50%;
+					}
+					@include breakpoint($breakpoint-lg){
+						color:$light-grey;
+						margin-left:70px;
+						width:50%;
+					}
+					@include font-size(1.125);
+					font-family:"din-cond-light";
+					padding-top:15px;
+					float:left;
+					code{
+						@include font-size(0.813);
+					}
+				}
+				
+				.form-submit{
+					@include breakpoint($breakpoint-sm){
+						padding-top:15px;
+						margin-left:55px;
+						width:70%;
+						float:left;
+					}
+					@include breakpoint($breakpoint-md){
+						padding-top:15px;
+						margin-left:0;
+						width:30%;
+						float:left;
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-top:15px;
+						margin-left:0;
+						width:30%;
+						float:left;
+					}
+					
+					#submit{
+						@include breakpoint($breakpoint-sm){
+							width:100%;
+							float:none;
+							margin-right:0;
+						}
+						@include breakpoint($breakpoint-md){
+							width:150px;
+							float:right;
+							margin-right:0;
+						}
+						@include breakpoint($breakpoint-lg){
+							width:150px;
+							float:right;
+							margin-right:0;
+						}
+						
+						border:none;
+						background-color:$pink;
+						color:$white;
+						padding:5px 20px 5px 20px;
+						font-family:"stag-bold";
+						font-style:italic;
+						&:hover{
+							color:$orange;
+						}
+					}
+				}
+			}
+			padding-bottom:20px;
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// HEADER
+//////////////////////////////////////////////////////////////////
+
+header{
+	@include breakpoint($breakpoint-lg){
+		//margin: 0 0 - 70px;
+	}
+  .logo{
+		background-color:$propane-blue;
+		@include breakpoint($breakpoint-sm){
+			margin:0;
+			float:left;
+			width:20%;
+		}
+		@include breakpoint($breakpoint-md){
+			margin:0;
+			float:left;
+			width:20%;
+		}
+		
+		@include breakpoint($breakpoint-lg){
+			width:90px;
+			margin-left:-90px;
+		}
+		img{
+			@include breakpoint($breakpoint-sm){
+				margin-top:8px;
+			}
+			@include breakpoint($breakpoint-md){
+				margin-top:0;
+			}
+			@include breakpoint($breakpoint-lg){
+				margin-top:0;
+			}
+		}
+		height:90px;
+  }
+   
+  .category{
+		background-color:$light-grey;
+		@include breakpoint($breakpoint-sm){
+				float:right;
+				width:80%;
+		}
+		@include breakpoint($breakpoint-md){
+				float:right;
+				width:80%;
+		}
+		@include breakpoint($breakpoint-lg){
+			position:relative;
+			margin:0;
+			float:left;
+			width: 13%;
+		}
+		
+		ul{
+			margin:0;
+			padding:0;
+		}
+		
+		.cat-chevron-icon{
+			float:right;
+			display:inline-block;
+			position:relative;
+			margin-right:15px;
+			margin-top:5px;
+			@include retina-sprite(category-chevron);
+		}
+		
+		.cat-chevron-icon-hover{
+			@include retina-sprite(category-chevron-up);	
+		}
+		
+		.category-nav{
+			@include breakpoint($breakpoint-sm){
+				
+	    }
+	    @include breakpoint($breakpoint-md){
+				
+	    }
+	    @include breakpoint($breakpoint-lg){
+				//margin-top:32px;
+	    }
+			
+			ul{
+				display:none;
+			}
+				
+			.category-nav-link{
+				@include breakpoint($breakpoint-sm){
+					height:90px;
+				}
+				@include breakpoint($breakpoint-md){
+					height:90px;
+				}
+				@include breakpoint($breakpoint-lg){
+					height:90px;
+				}
+				
+				padding-left:15px;
+				color:$white;
+				text-decoration:none;
+				display:block;
+				padding-top:33px;
+				margin:0;
+			}
+			
+			.category-nav-hover{
+				background-color:#a2a2a2;
+			}
+			
+			.category-nav-dropdown{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:none;
+				}
+				
+				a{
+					display:block;
+					width:100%;
+					padding-left:15px;
+					padding-top:5px;
+					padding-bottom:5px;
+					text-decoration:none;
+					@include font-size(1);
+					color:$white;
+					&:hover{
+						background-color:$orange;
+					}
+				}
+				margin:0;
+				padding:0;
+			}
+			
+			//padding-top:35px;
+			background-color:$light-grey;
+			margin:0;
+			//display:none;
+		}
+		
+		color:$white;
+		height:90px;
+		overflow: visible;
+		font-family:"din-cond-medium";
+		@include font-size(1);
+		text-transform:uppercase;
+		margin:0;
+		vertical-align: middle;
+		z-index:1002;
+		//border-right:2px solid $light-grey;
+  }
+	
+	.category-nav-sm{
+		@include breakpoint($breakpoint-sm){
+			float:left;
+			display: none;
+		}
+		@include breakpoint($breakpoint-md){
+			float:left;
+			display: none;
+		}
+		@include breakpoint($breakpoint-lg){
+			display: none;
+		}
+		
+		ul{
+			@include breakpoint($breakpoint-sm){
+				//display: none;
+			}
+			@include breakpoint($breakpoint-md){
+				//display: none;
+			}
+			@include breakpoint($breakpoint-lg){
+				//display: none;
+			}
+			li{
+				padding-left:15px;
+				padding-top:5px;
+				padding-bottom:5px;
+				text-align: center;
+				a{
+					text-decoration: none;
+					color:$white;
+				}
+				
+				&:hover{
+					background-color:$orange;
+				}
+			}
+			//display:none;
+		}
+		background-color:$grey-darker;
+		//display:none;
+	}
+   
+  .search-area{
+		@include breakpoint($breakpoint-sm){
+			height:66px;
+			float:left;
+		}
+		@include breakpoint($breakpoint-md){
+			height:66px;
+			float:left;
+		}
+		@include breakpoint($breakpoint-lg){
+			margin:0;
+			position:relative;
+			float:right;
+			width:87%;
+			height:90px;
+		}
+		
+		.pre-search{
+			@include breakpoint($breakpoint-sm){
+				padding-top:20px;
+				padding-left:15px;
+			}
+			@include breakpoint($breakpoint-md){
+				padding-top:20px;
+				padding-left:15px;
+			}
+			@include breakpoint($breakpoint-lg){
+				padding-top:33px;
+				padding-left:15px;
+			}
+			.search-icon{
+				float:right;
+				padding-right:20px;
+				
+				.mag-glass{
+					display:block;
+					position:relative;
+					@include retina-sprite(magnifying-glass);
+					&:hover{
+						@include retina-sprite(magnifying-glass-hover);
+					}
+				}
+			}
+			
+			sup{
+				font-family:"Helvetica";
+				font-weight:bold;
+				@include font-size(0.188);
+			}
+			margin:0;
+			padding:0;
+			width:100%;
+			height:100%;
+		}
+		
+		.searching{
+			form{				
+				.search-close{
+					float:right;
+					@include breakpoint($breakpoint-sm){
+						padding-top:25px;
+						padding-right:8px;
+					}
+					@include breakpoint($breakpoint-md){
+						padding-top:25px;
+						padding-right:25px;
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-top:35px;
+						padding-right:25px;
+					}
+				}
+				
+				.searchsubmit{
+					background-color:$orange;
+					float:right;
+					height:100%;
+				}
+				
+				.search-field{
+					@include breakpoint($breakpoint-sm){
+						font-family:'din-regular';
+						@include font-size(2.125);
+						width:200px;
+						margin-top:0;
+						margin-left:0;
+					}
+					@include breakpoint($breakpoint-md){
+						font-family:'din-regular';
+						@include font-size(2.125);
+						width:300px;
+						margin-top:5px;
+						margin-left:15px;
+					}
+					@include breakpoint($breakpoint-lg){
+						font-family:'din-regular';
+						@include font-size(2.125);
+						width:400px;
+						margin-top:18px;
+						margin-left:15px;
+					}
+					border:0;
+					color:#4e4e4e;
+					background-color:#e2e2e2;
+					float:left;
+					outline:none;
+				}
+				
+				.search-close-btn{
+					@include breakpoint($breakpoint-sm){
+						margin-top:25px;
+						margin-right:8px;
+					}
+					@include breakpoint($breakpoint-md){
+						margin-top:25px;
+						margin-right:25px;
+					}
+					@include breakpoint($breakpoint-lg){
+						margin-top:35px;
+						margin-right:25px;
+					}
+					display:block;
+					position:relative;
+					float:right;
+					@include retina-sprite(search-close);
+				}
+				
+				width:100%;
+				height:100%;
+				background-color:#e2e2e2;
+				display:block;
+			}
+			
+			display:none;
+			width:100%;
+			height:100%;
+		}
+		
+		margin:0;
+		color:$lighter-grey;
+		background-color:$white;
+		font-family:'stag-semibold';
+		@include font-size(1.125);
+	}
+	//background-color:$light-grey;
+}
+
+//////////////////////////////////////////////////////////////////
+// NOTHING TO DISPLAY
+//////////////////////////////////////////////////////////////////
+.nothing-to-display{
+	@include breakpoint($breakpoint-md){
+	  width:100%;    
+	}
+	@include breakpoint($breakpoint-md){
+	  width:100%;  
+	}
+	
+	@include breakpoint($breakpoint-lg){
+		width:87%;
+	}
+	background-color:$white;	
+}
+	
+//////////////////////////////////////////////////////////////////
+// SEARCH RESULTS BAR
+//////////////////////////////////////////////////////////////////
+
+.search-results-bar{
+	@include breakpoint($breakpoint-md){
+	  width:100%;    
+	}
+	@include breakpoint($breakpoint-md){
+	  width:100%;  
+	}
+	
+	@include breakpoint($breakpoint-lg){
+		width:87%;
+	}
+	span{
+		font-family:"din-cond-medium";
+		@include font-size(1.125);
+		text-transform:uppercase;
+		color:#555555;
+	}
+	.search-words{
+		color:$propane-blue;
+		padding-left:5px;
+	}
+	.close-results-bar{
+		float:right;
+		padding-right:28px;
+		padding-top:7px;
+		font-family:"din-cond-medium";
+		a{
+			font-family:'din-regular';
+			@include font-size(1.125);
+			color:$light-grey;
+			text-decoration:none;
+			&:hover{
+				text-decoration:none;
+			}
+		}
+	}
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:20px;
+	margin:0;
+	background-color:#363636;
+}
+
+//////////////////////////////////////////////////////////////////
+// FOOTER
+//////////////////////////////////////////////////////////////////
+
+footer{
+  .page-nav{
+		@include breakpoint($breakpoint-md){
+	    
+		}
+		
+		@include breakpoint($breakpoint-lg){
+		
+		}
+		
+		background-color: $grey-darkest;
+		padding:0 0 0 0;
+	}
+    
+  .info-footer{
+		//background-color: $grey-darker;
+		color:$light-grey;
+		width:100%;
+		@include font-size(0.750);
+		
+		.group0{
+			@include breakpoint($breakpoint-sm){
+				display:block;
+				
+				li{
+					background-color:$propane-blue;
+					color:$white;
+					height:50px;
+					
+					text-align:center;
+					text-transform:uppercase;
+					border-bottom:1px solid $black;
+					
+					a{
+						display:block;
+						text-decoration: none;
+						color:$white;
+						width:100%;
+						height:100%;
+						padding-top:17px;
+						padding-left:50px;
+						font-family:"din-cond-medium";
+						@include font-size(0.863);
+					}
+					
+					.permalink{
+						float: right;
+						padding-right:40px;
+						@include retina-sprite(permalink);
+					}
+				}
+			}
+			@include breakpoint($breakpoint-md){
+				display:block;
+				
+				li{
+					background-color:$propane-blue;
+					color:$white;
+					height:50px;
+					text-align:center;
+					text-transform:uppercase;
+					border-bottom:1px solid $black;
+					
+					a{
+						display:block;
+						text-decoration: none;
+						color:$white;
+						width:100%;
+						height:100%;
+						padding-top:17px;
+						padding-left:50px;
+					}
+					
+					.permalink{
+						float: right;
+						padding-right:40px;
+					}
+				}
+			}
+			@include breakpoint($breakpoint-lg){
+				display:none;
+			}
+		}
+		
+		.group1{
+			@include breakpoint($breakpoint-sm){
+				display:block;
+				width:100%;
+				padding-top:50px;
+				padding-bottom:50px;
+				padding-left:0;
+			}	
+			@include breakpoint($breakpoint-md){
+				display:block;
+				width:100%;
+				padding-top:50px;
+				padding-bottom:50px;
+				padding-left:0;
+			}
+			@include breakpoint($breakpoint-lg){
+				display:block;
+				width:85%;
+				padding-left:0px;
+				padding-top:80px;
+				padding-bottom:10px;
+			}
+				
+			.about{
+				@include breakpoint($breakpoint-sm){
+					display:block;
+					width:100%;
+				}
+				@include breakpoint($breakpoint-md){
+					display:block;
+					width:100%;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline-block;
+					width:25%;
+				}
+			
+				.legal{
+					@include breakpoint($breakpoint-sm){
+						padding-bottom:0;
+						padding-left:0;
+						text-align:center;
+					}
+					@include breakpoint($breakpoint-md){
+						padding-bottom:0;
+						padding-left:0;
+						text-align:center;
+					}
+					@include breakpoint($breakpoint-lg){
+						padding-bottom:0;
+						padding-left:5px;
+						text-align:left;
+					}    
+				}
+			
+				.link-group{
+					@include breakpoint($breakpoint-sm){
+						display:none;
+					}
+					@include breakpoint($breakpoint-md){
+						display:none;
+					}
+					@include breakpoint($breakpoint-lg){
+						display:block;
+					} 
+						
+					.link{
+						padding-left:5px;
+						padding-right:5px;
+					}
+				}
+			}
+				
+			.email{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+						display:inline-block;
+						width:28%;
+				}
+			}
+				
+			.phone{
+				@include breakpoint($breakpoint-sm){
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline-block;
+					padding-right:20px;
+					width:20%;
+				}
+				
+			}
+				
+			.social{
+				@include breakpoint($breakpoint-sm){
+					float:right;
+					display:none;
+				}
+				@include breakpoint($breakpoint-md){
+					float:right;
+					display:none;
+				}
+				@include breakpoint($breakpoint-lg){
+					display:inline-block;
+					float:right;
+					width:20%;
+					margin-right:30px;
+				}
+				
+				ul{
+					float:right;
+				}
+				li{
+						padding-right:18px;
+						display:inline-block;
+						.footer-propane{
+							@include retina-sprite(footer-propane-logo);
+						}
+				}
+				li:last-of-type{
+						padding-right:0;
+						display:inline-block;
+				}
+				
+				.social-icons{
+						float:right;
+				}
+				
+				.footer-propane-com{
+					display:block;
+					position:relative;
+					@include retina-sprite(footer-propane-logo);
+				}
+				.footer-propane-twitter{
+					display:block;
+					position:relative;
+					@include retina-sprite(footer-twitter-logo);
+				}
+				.footer-propane-fb{
+					display:block;
+					position:relative;
+					@include retina-sprite(footer-facebook-logo);
+				}
+				.footer-propane-li{
+					display:block;
+					position:relative;
+					@include retina-sprite(footer-linkedin-logo);
+				}
+			}
+			font-family:"din-regular";
+		}
+	 
+		.group2{
+			@include breakpoint($breakpoint-sm){
+				display:none;
+			}
+			@include breakpoint($breakpoint-md){
+				display:none;
+			}
+			@include breakpoint($breakpoint-lg){
+				display:block;
+				width:85%;
+				padding-left:0px;
+			}
+		 
+			p{
+				padding-left:5px;
+				width:70%;
+			}
+			padding-top:20px;
+			padding-bottom:30px;
+			font-family:"din-regular";
+		}
+		
+		li{
+			@include font-size(0.750);
+	   
+			.loc{
+				color:$propane-blue;
+				padding-right:5px;
+			}
+		}
+		
+		a{
+			color: $light-grey;
+			text-decoration: none;
+			&:hover{
+					text-decoration: underline;
+			}
+	    @include font-size(0.750);
+		}
+  }
+	height:333px;
+	border-top:1px solid #343434; 
+	background:image-url("img/backgrounds/footer-bg.png") repeat-x; 
+}
+
+//////////////////////////////////////////////////////////////////
+// NEXTGEN GALLERY
+//////////////////////////////////////////////////////////////////
+.ngg-galleryoverview{
+	@include breakpoint($breakpoint-sm){
+		padding-right:15px;
+		margin-left:0;
+		float:none;
+	}
+	@include breakpoint($breakpoint-md){
+		padding-right:15px;
+		margin-left:0;
+		float:none;
+	}
+	@include breakpoint($breakpoint-lg){
+		padding-right:80px;
+		margin-left:0;
+		float:right;
+	}
+	display:inline-block;
+	position:relative;
+	width:100%;
+	
+	//max-width:680px;
+	//padding-left:15px;
+	//padding-right:20px;
+	
+	.thumbnail-container{
+		background-color: #d7d7d7;
+		margin-left:15px;
+		width:100%;
+		.ngg-gallery-thumbnail-box{
+			position:relative;
+			width:25%;
+			.ngg-gallery-thumbnail{
+				width:100%;
+			}
+			img{
+				width:100%;
+			}
+			.gallery-hover-img{
+				display:none;
+				position:absolute;
+				top:0;
+				left:0;
+				opacity: 0.9;
+				filter:alpha(opacity=90);
+			}
+		}
+	}
+	
+	.open-gallery{
+		padding-top:15px;
+		padding-bottom:30px;
+		text-transform:uppercase;
+		margin-left:15px;
+		.open-icon{
+			padding-right:8px;	
+		}
+		
+		a{
+			color:$pink;
+			font-family:"din-cond-medium";
+			@include font-size(1.125);
+			text-decoration:none;
+			&:hover{
+				color:$orange;
+				//text-decoration:underline;
+			}
+		}
+	}
+}
+
+.shShutter{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height:100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	z-index: 10000;
+	background-color: #000000;
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+.shDisplay{
+	display: block;
+	top: 0;
+	left: 0;
+	padding:0;
+	margin-top:-3px;
+	background-color: transparent;
+	z-index: 10002;
+	width: 100%;
+	position: absolute;
+	
+	.shHeader{
+		display: block;
+		position:absolute;
+		margin:0 auto;
+		height:90px;
+		width:100%;
+		z-index: 10002;
+		color:$lighter-grey;
+		background-color:$white;
+		font-family:'stag-bold';
+		@include font-size(1.125);
+		
+		.ps-logo{
+			float:left;
+		}
+		
+		p{
+			@include breakpoint($breakpoint-sm){
+				display:none;
+			}
+			@include breakpoint($breakpoint-md){
+				display:block;
+			}
+			@include breakpoint($breakpoint-lg){
+				display:block;
+			}
+			
+			sup{
+				font-family:"Arial";
+				@include font-size(0.813);
+			}
+			
+			margin-top:30px;
+			padding-left:20px;
+			float:left;
+		}
+		
+		.shNav{
+			@include breakpoint($breakpoint-sm){
+				width:170px;
+			}
+			@include breakpoint($breakpoint-md){
+				width:170px;	
+			}
+			@include breakpoint($breakpoint-lg){
+				width:230px;	
+			}
+			
+			height:90px;
+			padding-top:25px;
+			float:right;
+		}
+		
+		.shNext{
+			float:left;
+			padding-top:5px;
+			padding-left:40px;
+		}
+		
+		.shCount {
+			@include font-size(1.750);
+			font-family:'din-cond-medium';
+			color:#d3d3d3;
+			float:left;
+			font-weight:bold;
+			
+			span{
+				padding-left:5px;
+				padding-right:5px;
+			}
+			.currImg{
+				color:$fuchsia;
+			}
+			.nextImg{
+				color:#acacac;
+			}
+		}
+		
+		.shPrev {
+			float:left;
+			padding-top:5px;
+			padding-right:40px;
+		}
+		
+		.close-btn{
+			padding-top:30px;
+			padding-right:30px;
+			float:right;
+		}
+	}
+	
+	.shWrap {
+		visibility: hidden;
+		background-color:#141414;
+		padding:0;
+		margin:0;
+		max-height:786px;
+		
+		.hero-content{
+			.hero-info {
+				@include breakpoint($breakpoint-sm){
+					float:none;
+					width:100%;
+				}
+				@include breakpoint($breakpoint-md){
+					float:right;
+					width:40%;
+				}
+				@include breakpoint($breakpoint-lg){
+					float:right;
+					width:25%;
+				}
+				
+				p{
+					font-family:'din-regular';
+					@include font-size(0.875);
+					color:$light-grey;
+				}
+				
+				h3{
+					font-family:'stag-book';
+					@include font-size(1.750);
+					line-height:1em;
+					color:$off-white;
+					padding-bottom:10px;
+				}
+				display:inline-block;
+				margin:0;
+				padding:45px 25px 45px; 
+			}
+			
+			.hero-img{
+				@include breakpoint($breakpoint-sm){
+					width:100%;
+				}
+				@include breakpoint($breakpoint-md){
+					width:60%;
+				}
+				@include breakpoint($breakpoint-lg){
+					width:75%;
+				}
+				
+				img{
+					@include breakpoint($breakpoint-sm){
+						display:block;
+						float:none;
+					}
+					@include breakpoint($breakpoint-md){
+						display:inline-block;
+						float:right;
+					}
+					@include breakpoint($breakpoint-lg){
+						display:inline-block;
+						float:right;
+					}
+				}
+				
+				.shTopImg{
+					
+				}
+				
+				display:inline-block;
+				margin:0;
+			}
+			
+			//float:right;
+			margin:0;	
+			width:100%;
+			padding-top:90px;
+			background-color:#141414;
+		}
+	}
+}
+

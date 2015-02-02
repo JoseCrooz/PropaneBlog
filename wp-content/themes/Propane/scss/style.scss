@@ -1,0 +1,37 @@
+/*
+Theme Name: Propane Studio
+Theme URI: 
+Description: Propane Studio WordPress Theme
+Version: 0.0.1
+Author: Propane Studio
+Author URI: http://www.propanestudio.com
+Tags: Digital, Agency
+
+*/
+////////////////////////
+// Style File
+//
+// This file gets turned into style.css. This file should really
+//  hold nothing except for imports of your base, layout, and design
+//  partials, plus the mixins required to kickstart Aura and Style Guide.
+////////////////////////
+
+////////////////////////
+// Base Import
+////////////////////////
+@import 'partials/global/base';
+
+////////////////////////
+// Import Style Guide
+////////////////////////
+@import 'partials/styleguide/style-guide';
+
+////////////////////////
+// Import Layout
+////////////////////////
+@import 'partials/layout/layout';
+
+////////////////////////
+// Import Design
+////////////////////////
+@import 'partials/design/design';

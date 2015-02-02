@@ -1,0 +1,426 @@
+////////////////////////
+// Layout Partials
+//
+// Seperate your layout from design, building sub folders and partials
+//  in this folder, with everything being imported, in casading order,
+//  into this file.
+//
+// All box model properties go here
+////////////////////////
+
+//mobile first
+.grid-wrap{
+	$total-columns: 1;
+	$column-width: 100;
+	$gutter-width: 0;
+	$grid-padding: 1.25em; //20px
+
+	@include container;
+	// @include susy-grid-background;
+}
+
+// for medium devices
+@include breakpoint($breakpoint-sm) {
+	$total-columns: 2;
+	$column-width: 19.375em; //310px
+	$gutter-width: 1.5625em; //25px
+	$grid-padding: 0;//1.25em; //20px
+	$container-width: 1000px;
+
+	 .grid-wrap {
+	    @include container;
+	    //@include susy-grid-background;
+	  }
+}
+
+// for medium devices
+@include breakpoint($breakpoint-md) {
+	$total-columns: 2;
+	$column-width: 19.375em; //310px
+	$gutter-width: 1.5625em; //25px
+	$grid-padding: 0;//1.25em; //20px
+	$container-width: 1000px;
+
+	 .grid-wrap {
+	    @include container;
+	    //@include susy-grid-background;
+	  }
+}
+
+// for large devices
+@include breakpoint($breakpoint-lg) {
+	$total-columns: 3;
+	$column-width: 20em; //320px
+	$gutter-width: 1.563em; //25px
+	$grid-padding: 5.625em;//1.25em; //20px //5.625em; //90px
+	$container-width: 1190px;
+
+	.grid-wrap {
+		@include container;
+		//@include susy-grid-background;
+	}
+}
+//end large devices
+
+//////////////////////////////////////////////////////////////////
+// HEADER
+//////////////////////////////////////////////////////////////////
+
+header{
+	@include breakpoint($breakpoint-sm){
+		@include span-columns(2 omega, 2);
+	}
+	
+	@include breakpoint($breakpoint-md){
+		@include span-columns(2 omega, 2);
+	}
+	
+	@include breakpoint($breakpoint-lg){
+		@include span-columns(3 omega, 3);
+	}
+	
+	.logo{
+		@include breakpoint($breakpoint-sm){
+  		@include span-columns(1, 2);
+	  }
+		
+		@include breakpoint($breakpoint-md){
+  		@include span-columns(1, 2);
+	  }
+		@include breakpoint($breakpoint-lg){
+  		@include span-columns(3 omega, 3);
+	  }
+	}
+	.category{
+		@include breakpoint($breakpoint-sm){
+			@include span-columns(1 omega, 2);
+		}
+		@include breakpoint($breakpoint-md){
+			@include span-columns(1 omega, 2);
+		}
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(1, 3);
+		}
+	}
+	
+	.category-nav-sm{
+		@include breakpoint($breakpoint-sm){
+			@include span-columns(2 omega, 2);
+		}
+		@include breakpoint($breakpoint-md){
+			@include span-columns(2 omega, 2);
+		}
+	}
+	
+	.search-area{
+		@include breakpoint($breakpoint-sm){
+			@include span-columns(2 omega, 2);
+		}
+		@include breakpoint($breakpoint-md){
+			@include span-columns(2 omega, 2);
+		}
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(2 omega, 3);
+		}
+	}
+}
+
+.nothing-to-display{
+	@include breakpoint($breakpoint-sm){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-md){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-lg){
+		@include span-columns(2 omega, 3);
+	}
+}
+
+.search-results-bar{
+	@include breakpoint($breakpoint-sm){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-md){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-lg){
+		@include span-columns(2 omega, 3);
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// ARTICLES
+//////////////////////////////////////////////////////////////////
+
+article{
+	@include breakpoint($breakpoint-sm){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-md){
+		@include span-columns(2 omega, 2);
+	}
+	@include breakpoint($breakpoint-lg){
+		@include span-columns(3 omega, 3);
+	}
+	
+	.blog-image{
+		@include breakpoint($breakpoint-sm){
+	    @include span-columns(2 omega, 2);
+		}
+		@include breakpoint($breakpoint-md){
+	    @include span-columns(2 omega, 2);
+		}
+		@include breakpoint($breakpoint-lg){
+	    @include span-columns(3 omega, 3);
+		}
+	}
+	
+	.social-article{
+		@include breakpoint($breakpoint-md){
+			@include span-columns(2 omega, 2);
+		}
+		
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+		
+		.social-date{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1, 3);
+			}
+		}
+		
+		.social-preview{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(2 omega, 3);
+			}
+			
+			.social-icon{
+				@include breakpoint($breakpoint-lg){
+					@include span-columns(1, 3);
+				}
+			}
+			
+			.social-text{
+				@include breakpoint($breakpoint-lg){
+					@include span-columns(1 omega, 3);
+				}
+			}
+			
+		}
+		
+	}
+	
+	.blog-cap{
+		@include breakpoint($breakpoint-md){
+  		@include span-columns(2 omega, 2);
+	  }
+		
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+		
+		.blog-date{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1, 3);
+			}
+		}
+		
+		.blog-author{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1 , 3);
+			}
+		}
+		
+		.blog-title{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1 omega, 3);
+			}
+		}
+			
+	}
+		
+	.blog-content{
+		@include breakpoint($breakpoint-md){
+	    @include span-columns(2 omega, 2);
+	  }
+		
+		@include breakpoint($breakpoint-lg){
+	    @include span-columns(3 omega, 3);
+	  }
+		
+		.tags{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1, 3);
+			}
+		}
+		
+		.blog-body{
+			@include breakpoint($breakpoint-sm){
+				@include span-columns(2 omega, 2);
+			}
+			@include breakpoint($breakpoint-md){
+				@include span-columns(2 omega, 2);
+			}
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(2 omega, 3);
+			}
+			
+			.social-buttons{
+				@include breakpoint($breakpoint-lg){
+					@include span-columns(1, 3);
+				}
+			}
+			
+			.blog-body-copy{
+				@include breakpoint($breakpoint-md){
+					@include span-columns(2 omega, 2);
+				}
+				@include breakpoint($breakpoint-sm){
+					@include span-columns(2 omega, 2);
+				}
+				@include breakpoint($breakpoint-lg){
+					@include span-columns(2 omega, 3);
+				}
+			}
+		}
+	}
+	
+	.comments{
+		@include breakpoint($breakpoint-sm){
+			@include span-columns(2 omega, 3);
+		}
+		@include breakpoint($breakpoint-md){
+			@include span-columns(2 omega, 3);
+		}
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+		
+		.comment{
+			@include breakpoint($breakpoint-md){
+				@include span-columns(2 omega, 3);
+			}
+			@include breakpoint($breakpoint-sm){
+				@include span-columns(2 omega, 3);
+			}
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(1 omega, 3);
+			}
+		}
+	}
+	
+	.comment-form{
+		@include breakpoint($breakpoint-md){
+			@include span-columns(2 omega, 3);
+		}
+		@include breakpoint($breakpoint-sm){
+			@include span-columns(2 omega, 3);
+		}
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// PAGINATION
+//////////////////////////////////////////////////////////////////
+.page-nav{
+		@include breakpoint($breakpoint-sm){
+    	@include span-columns(2 omega, 2);
+    }
+		
+		@include breakpoint($breakpoint-md){
+    	@include span-columns(2 omega, 2);
+    }
+		
+		@include breakpoint($breakpoint-lg){
+    	@include span-columns(3 omega, 3);
+    }
+		
+		.pagination{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(3 omega, 3);
+			}
+		}
+		
+	}
+
+//////////////////////////////////////////////////////////////////
+// FOOTER
+//////////////////////////////////////////////////////////////////
+
+footer{
+	.info-footer{
+		@include breakpoint($breakpoint-md){
+    	@include span-columns(2 omega, 2);
+    }
+
+		@include breakpoint($breakpoint-lg){
+    	@include span-columns(3 omega, 3);
+    }
+		
+		.group0{
+			@include breakpoint($breakpoint-md){
+				@include span-columns(2 omega, 2);
+			}
+		}
+		
+		.group1{
+			@include breakpoint($breakpoint-md){
+				@include span-columns(2 omega, 2);
+			}
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(3 omega , 3);
+			}
+		}
+		
+		.group2{
+			@include breakpoint($breakpoint-lg){
+				@include span-columns(3 omega , 3);
+			}
+		}
+	}
+}
+
+//////////////////////////////////////////////////////////////////
+// NEXTGEN GALLERY
+//////////////////////////////////////////////////////////////////
+/*.shDisplay{
+	@include breakpoint($breakpoint-md){
+		@include span-columns(2 omega, 2);
+	}
+
+	@include breakpoint($breakpoint-lg){
+		@include span-columns(3 omega, 3);
+	}
+	
+	.shHeader{
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+	}
+	
+	.shWrap{
+		@include breakpoint($breakpoint-lg){
+			@include span-columns(3 omega, 3);
+		}
+	}
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

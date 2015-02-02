@@ -1,0 +1,31 @@
+////////////////////////
+// Mixins Partials
+//
+// All of your mixins should go in this file.
+////////////////////////
+
+//Ems to Rems
+@mixin font-size( $decimal-size, $keyword: null ) {
+  $base-font-multiplier: 1;
+  @if $keyword { font-size: $keyword; }
+  @else { font-size: $decimal-size * $base-font-multiplier * 16px; }
+  font-size: $decimal-size * 1rem;
+}
+
+//Retina Images
+//Be sure to add .ir class to tag being replaced -- see _extendables.scss
+/*@mixin image-2x($image, $image2x, $width, $height) {
+	background:image-url($image) no-repeat;
+	width: $width;
+	height: $height;
+	display: block;
+  @media (min--moz-device-pixel-ratio: 1.3),
+         (-o-min-device-pixel-ratio: 2.6/2),
+         (-webkit-min-device-pixel-ratio: 1.3),
+         (min-device-pixel-ratio: 1.3),
+         (min-resolution: 1.3dppx) {
+    // on retina, use image that's scaled by 2 
+    background-image:image-url($image2x);
+    background-size: $width $height;
+  }
+}*/

@@ -1,0 +1,59 @@
+////////////////////////
+// Variables Partials
+//
+// All of your variables should go in this file.
+////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+// BREAKPOINT SETTINGS
+////////////////////////////////////////////////////////////////////////
+$breakpoint-default-media: 'all';
+$breakpoint-default-feature: 'min-width';
+$breakpoint-default-pair: 'width';
+$breakpoint-to-ems: true; //false is default
+
+//Declare breakpoints here
+$breakpoint-sm: min-width 320px; //converted to ems automagically
+// $breakpoint-md: 481px 899px; //converted to ems automagically
+//$breakpoint-md-2: min-width 680px; //converted to ems automagically
+$breakpoint-md: min-width 481px; //converted to ems automagically
+$breakpoint-lg: min-width 950px; //converted to ems automagically
+
+////////////////////////////////////////////////////////////////////////
+// COLORS
+////////////////////////////////////////////////////////////////////////
+$propane-blue: #00a3db;
+$purple: #724186;
+$white: #fff;
+$black: #000;
+$off-white: #d1d1d1;
+$lightest-grey: #7d7d7d;
+$lighter-grey: #acacac;
+$light-grey: #696969;
+$grey: #999999;
+$grey-dark: #363636;
+$grey-med-dark: #666;
+$grey-med-dark2: #4d4d4d;
+$grey-darker: #292929;
+$grey-comments: #212121;
+$grey-darkest: #202020;
+$dark-grey: #1c1c1c;
+$orange: #ff8c00;
+$pink: #b02060;
+$fuchsia: #cc0066;
+
+////////////////////////////////////////////////////////////////////////
+// VISUAL EFFECTS
+////////////////////////////////////////////////////////////////////////
+
+//Drop-shadow
+$drop-shadow: rgba(0,0,0,0.5) 0 0 12px 2px;
+
+//Text-Shadow
+$h2-text-shadow: 0 0 11px $black;
+
+////////////////////////////////////////////////////////////////////////
+// SPRITES
+////////////////////////////////////////////////////////////////////////
+
+$chevron-orange-right: #000;
